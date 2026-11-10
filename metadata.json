@@ -1,0 +1,6 @@
+{
+  "name": "EnviroRide Booking System",
+  "description": "Premium eco-friendly Ground Transportation Booking System with a smooth 2-step flow, Google Maps integration, distance calculation, and automated email notifications.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

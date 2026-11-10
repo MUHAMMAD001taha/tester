@@ -1,0 +1,70 @@
+{
+  "entities": {
+    "booking": {
+      "title": "Booking",
+      "description": "A ride booking submission",
+      "type": "object",
+      "properties": {
+        "fullName": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "serviceType": { "type": "string" },
+        "tripType": { "type": "string" },
+        "pickupAddress": { "type": "string" },
+        "dropoffAddress": { "type": "string" },
+        "stops": { "type": "array" },
+        "pickupDateTime": { "type": "string" },
+        "returnDateTime": { "type": "string" },
+        "vehicle": { "type": "string" },
+        "price": { "type": "number" },
+        "additionalServices": { "type": "array" },
+        "passengerCount": { "type": "number" },
+        "luggageCount": { "type": "number" },
+        "status": { "type": "string" },
+        "assignedTo": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["fullName", "email", "phone", "pickupAddress", "dropoffAddress", "pickupDateTime", "timestamp"]
+    },
+    "user": {
+      "title": "User",
+      "description": "An employee or admin login user",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" },
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "passwordHash": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["email", "name", "role", "passwordHash", "createdAt"]
+    },
+    "session": {
+      "title": "Session",
+      "description": "An active admin or employee session token",
+      "type": "object",
+      "properties": {
+        "token": { "type": "string" },
+        "email": { "type": "string" },
+        "name": { "type": "string" },
+        "role": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["token", "email", "name", "role", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/bookings/{bookingId}": {
+      "schema": "booking",
+      "description": "Collection of all bookings"
+    },
+    "/users/{userId}": {
+      "schema": "user",
+      "description": "Collection of master and employee user accounts"
+    },
+    "/sessions/{sessionId}": {
+      "schema": "session",
+      "description": "Collection of currently active user sessions"
+    }
+  }
+}
